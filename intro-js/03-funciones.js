@@ -37,6 +37,18 @@ const multi = function ({ n1, n2 }) {
     return parsedN1 * parsedN2
 }
 
+
+const division = (data) => {
+
+    const { n1, n2 } = data
+
+    return n1 / n2
+}
+
+// const division = ({ n1, n2 }) => {
+// return n1 / n2
+// }
+
 // const multi = ({ n1, n2 }) => n1 * n2
 
 

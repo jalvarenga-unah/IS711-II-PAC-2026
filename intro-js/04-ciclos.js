@@ -21,11 +21,9 @@ for (const [key, value] of listMascota) {
     }
 }
 
-const imprimir = ({ perro, gato }) => console.log(`Valor: ${perro}, indice: ${gato}`)
+const imprimir = (perro, gato) => console.log(`Valor: ${perro}, indice: ${gato}`)
 
-numeros.forEach((value, index) => {
-    imprimir({ perro: value, gato: index })
-})
+numeros.forEach(imprimir)
 
 // numeros.forEach((value, index, array) => {
 //     console.log(` valor: ${value}, indice: ${index}, array: ${array} `)

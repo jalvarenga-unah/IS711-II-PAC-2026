@@ -290,6 +290,27 @@ const Producto4 = products.find(producto => {
     return producto.id === 4
 })
 
+// elimiar el producto id 5
+const Producto5Index = products.findIndex(producto => {
+    return producto.id === 5
+})
+
+products.splice(Producto5Index, 1) // elimino el producto_id 5
+
+console.log(`Existe el producto id 5? : ${products.some((product) => product.id === 5)}`)
+
+//cambiar precio
+const Producto2Index = products.findIndex(producto => {
+    return producto.id === 2
+})
+
+products[Producto2Index].price = 30
+
+const producto2 = products.find((product) => product.id === 2)
+const nuevoPrecio = producto2?.price || 0
+
+console.log(`Nuevo valor para el producto 2: ${nuevoPrecio ? 'Aprovecha las ofertas' : 'No hay existecias'}`)
+
 
 console.log(productosMenoresA100.length)
 console.log(productosMejorPuntuados)

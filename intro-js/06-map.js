@@ -26,9 +26,15 @@ const postresActualizados = postres.map((postre) => {
     }
 
     //añadir el total de calorias
-    nuevoPostre.calorias = nuevoPostre.ingredientes.
+    nuevoPostre.calorias = nuevoPostre.ingredientes
+        .reduce((prevValue, currentValue, idx) => {
+            return prevValue + currentValue.calorias
+        }, 0)
 
     return nuevoPostre
 })
 
-console.log(postresActualizados[0])
+const copia = postres.map((postre) => postre)
+
+console.log(postres)
+console.log(postresActualizados)

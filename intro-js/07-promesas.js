@@ -37,9 +37,48 @@ miPromesa()
     })
 
 
-fetch('https://fakestoreapi.com/products')
+fetch('https://fakestoreapi.com/productss')
     .then((response) => {
+        if (!response.ok) return
+
         return response.json() //ejecuta una nueva promesa
-    }).then((data) => {
-        console.log(data)
     })
+    .then((data) => {
+        console.log(data)
+    }).catch((error) => {
+        console.log(error)
+    })
+
+
+// en una función asincrona
+const getAllProducts = async () => {
+    try {
+
+        const response = await fetch('https://fakestoreapi.com/products')
+
+        if (!response.ok) return
+
+        const data = await response.json()
+        console.log(data)
+        return data
+    } catch {
+
+        return null
+    }
+
+}
+
+//esto funciona solo dentro de un entorno de ejecucion de JS
+const products = await getAllProducts()
+
+
+// //para ejecutar en el navegador
+// (async () => {
+//     const products = await getAllProducts()
+//     console.log('listado de productos')
+//     console.log(products)
+// })();
+
+
+
+

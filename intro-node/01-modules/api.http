@@ -4,6 +4,7 @@ GET http://localhost:3000/products
 ### guardar un  producto
 POST http://localhost:3000/products
 Content-Type: application/json
+
 {
   "name": "Producto 1",
   "price": 100

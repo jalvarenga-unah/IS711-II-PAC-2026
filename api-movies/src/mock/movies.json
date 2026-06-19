@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "id":1,
+        "title":"The Batman",
+        "description":"",
+        "director":[],
+        "genres":[],
+        "poster_url":""
+    }
+]

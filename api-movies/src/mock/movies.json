@@ -1,10 +1,17 @@
 [
-    {
-        "id":1,
-        "title":"The Batman",
-        "description":"",
-        "director":[],
-        "genres":[],
-        "poster_url":""
-    }
+  {
+    "id": "jdbwdj124-234235h-2352352",
+    "title": "The Batman",
+    "description": "When the Riddler, a sadistic serial killer, begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.",
+    "director": [
+      {
+        "id": "jdbwdj124-234235h-2352353",
+        "name": "Matt Reeves",
+        "birth_year": 1966,
+        "birth_place": "United States"
+      }
+    ],
+    "genres": ["Action", "Crime", "Drama"],
+    "poster_url": "https://media.posterstore.com/site_images/68631be292c536b9cc92b044_2010122803_WB0039-5.jpg?auto=compress%2Cformat&fit=max&w=3840"
+  }
 ]

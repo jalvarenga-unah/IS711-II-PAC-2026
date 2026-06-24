@@ -1,5 +1,6 @@
 
 import { jsonResponse } from '../../src/helpers/json_response.js'
+import MovieModel from '../models/movie.model.js'
 import Movie from '../models/movie.model.js'
 
 export const getAllMovies = async (req, res) => {
@@ -34,6 +35,19 @@ export const getMovieById = async (req, res) => {
     }))
 }
 export const createMovie = async (req, res) => {
+
+    const payload = req.body
+
+    //early return 
+
+    //validar el objeto del body
+    if (!payload.title || payload.title.length < 2) {
+        return res.status(400).json(jsonResponse({ message: 'El titluo es obligatorio y debe tener al menos 2 caracteres' }))
+    }
+
+
+
+    const newMovie = await MovieModel.createMovie(payload)
 
 
 

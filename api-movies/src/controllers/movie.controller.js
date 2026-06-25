@@ -2,6 +2,7 @@
 import { jsonResponse } from '../../src/helpers/json_response.js'
 import MovieModel from '../models/movie.model.js'
 import Movie from '../models/movie.model.js'
+import { validateMovie } from '../schemas/movie.schema.js'
 
 export const getAllMovies = async (req, res) => {
 
@@ -41,11 +42,11 @@ export const createMovie = async (req, res) => {
     //early return 
 
     //validar el objeto del body
-    if (!payload.title || payload.title.length < 2) {
-        return res.status(400).json(jsonResponse({ message: 'El titluo es obligatorio y debe tener al menos 2 caracteres' }))
+    const { success, data, error } = validateMovie(payload)
+
+    if (!success) {
+        return res.status(400).send(error.message)
     }
-
-
 
     const newMovie = await MovieModel.createMovie(payload)
 

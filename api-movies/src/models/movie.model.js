@@ -31,6 +31,7 @@ export default class MovieModel {
 
         movies.push(movie)
 
+
         return movie
     }
 
